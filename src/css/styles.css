@@ -11,8 +11,103 @@
 @import url('./animations.css');
 
 /* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+body {
+  align-items: center;
+  text-align: center;
+  font-family: Montserrat;
+}
+.search-form {
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+.search-form input, .search-form button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+.search-form input {
+  width: 270px;
+  border-radius: 4px;
+  border: 1px solid #808080;
+}
+.search-form input:hover {
+  border: 1px solid #000;
+}
+.search-form input.active {
+  border: 1px solid #4E75FF;
+}
+
+.search-form button {
+  width: 90px;
+  background-color: #4E75FF;
+  color: white;
+  border-radius: 8px;
+  border: none;
+}
+.search-form button:hover {
+  background-color: #6C8CFF;
+}
+
+
+
+.loader-wrapper {
+  margin-top: 35px;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #FFF;
+  border-bottom-color: #000;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+
+
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .photo-card {
+      width: 350px;
+      height: 200px;
+      border: 1px solid #808080;
+    }
+    .photo-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover; 
+    }
+    .info {
+      display: flex;
+      color: #2E2F42;
+      gap: 30px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .info strong {
+      margin: 0;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 4%;
+    }
+    .info p {
+      margin: 0;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 24px;
+      letter-spacing: 4%;
+    }
