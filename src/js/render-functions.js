@@ -3,25 +3,28 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 
 let lightbox;
 
-export function renderGallery(images) {
-	const gallery = document.querySelector('.gallery');
-	const markup = images
-.map(image => {
-  return `<a href="${image.largeImageURL}" class="photo-card">
-            <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
-            <div class="info">
-              <p><strong>Likes:</strong> ${image.likes}</p>
-              <p><strong>Views:</strong> ${image.views}</p>
-              <p><strong>Comments:</strong> ${image.comments}</p>
-              <p><strong>Downloads:</strong> ${image.downloads}</p>
-            </div>
-          </a>`;
-})
-.join('');
+export function renderGallery(cards) {
+    return cards
+    .map(card => {
+    let {largeImageURL, webformatURL, tags, likes, views, comments, downloads} = card;
+    return `
+      <a href="${largeImageURL}" class="photo-card">
+        <img src="${webformatURL}" alt="${tags}" loading="lazy" />
+        <div class="info">
+          <p><strong>Likes:</strong> ${likes}</p>
+          <p><strong>Views:</strong> ${views}</p>
+          <p><strong>Comments:</strong> ${comments}</p>
+          <p><strong>Downloads:</strong> ${downloads}</p>
+        </div>
+      </a>
+    `;
+  })
+  .join('');
 
-	gallery.innerHTML = markup;
+}
 
-	if (lightbox) {
+export function initializeLightbox() {
+  if (lightbox) {
     lightbox.refresh(); 
 } else {
     lightbox = new SimpleLightbox('.gallery a', {
@@ -33,3 +36,22 @@ export function renderGallery(images) {
     });
 }
 }
+
+// варіант 2
+// function imageTemplate(card) {
+//   let {largeImageURL, webformatURL, tags, likes, views, comments, downloads} = card;
+//   return `
+//   <a href="${largeImageURL}" class="photo-card">
+//     <img src="${webformatURL}" alt="${tags}" loading="lazy" />
+//     <div class="info">
+//       <p><strong>Likes:</strong> ${likes}</p>
+//       <p><strong>Views:</strong> ${views}</p>
+//       <p><strong>Comments:</strong> ${comments}</p>
+//       <p><strong>Downloads:</strong> ${downloads}</p>
+//     </div>
+//   </a>
+//   `;
+// }
+// export function renderGallery(cards) {
+//   return cards.map(imageTemplate).join('')
+// }

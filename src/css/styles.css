@@ -16,6 +16,18 @@ body {
   text-align: center;
   font-family: Montserrat;
 }
+.hidden {
+  display: none;
+}
+button {
+  background-color: #4E75FF;
+  color: white;
+  border-radius: 8px;
+  border: none;
+}
+button:hover {
+  background-color: #6C8CFF;
+}
 .search-form {
   margin-top: 35px;
   margin-bottom: 35px;
@@ -38,13 +50,6 @@ body {
 
 .search-form button {
   width: 90px;
-  background-color: #4E75FF;
-  color: white;
-  border-radius: 8px;
-  border: none;
-}
-.search-form button:hover {
-  background-color: #6C8CFF;
 }
 
 
