@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>goit-js-hw-11</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="node_modules/simplelightbox/dist/simple-lightbox.min.css" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
     
     <script type="module" crossorigin src="/goit-js-hw-12/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-js-hw-12/assets/vendor-DYLXiCJH.js">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-12/assets/vendor-BDaiwwc1.js">
     <link rel="stylesheet" crossorigin href="/goit-js-hw-12/assets/vendor-DumFYO8Z.css">
-    <link rel="stylesheet" crossorigin href="/goit-js-hw-12/assets/index-BJ0byKQM.css">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-12/assets/index-CTUl4cl1.css">
   </head>
   <body>
     <main>
@@ -26,12 +27,16 @@
           />
           <button type="submit" class="submit-btn">Search</button>
         </form>
-        <div id="loader" class="loader-wrapper" style="display: none">
-          <span class="loader"></span>
-        </div>
+      
         <div class="gallery">
           
         </div>
+
+        <div id="loader" class="loader-wrapper hidden">
+          <span class="loader"></span>
+        </div>
+
+        <button class="load-more hidden">Load more</button>
       </div>
     </main>
   </body>
