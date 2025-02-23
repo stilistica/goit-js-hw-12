@@ -19,14 +19,28 @@
 body {
   display: flex;
   flex-direction: column;
-  min-width: 100vw;
+  width: 100%;
   min-height: 100vh;
   margin: 0;
+  align-items: center;
+  text-align: center;
+  font-family: Montserrat;
 }
 
 main {
   flex-grow: 1;
 }
-main:has(.back-link) {
-  text-align: center;
+
+
+.hidden {
+  display: none;
+}
+button {
+  background-color: #4E75FF;
+  color: white;
+  border-radius: 8px;
+  border: none;
+}
+button:hover {
+  background-color: #6C8CFF;
 }

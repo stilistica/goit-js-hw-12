@@ -69,14 +69,15 @@ form.addEventListener('submit', async (event) => {
 loadMore.addEventListener('click', async (event) => {
 	showElement(loader);
 	try {
+		hideElement(loadMore);
 	params.page += 1;
-	checkBtnLoadMoreStatus();
 	const { result } = await fetchImages(params.query, params.page);
 	const markup = renderGallery(result);
 	gallery.insertAdjacentHTML('beforeend', markup);
+	checkBtnLoadMoreStatus();
 
 	initializeLightbox();
-
+	scrollPage();
 	} catch (error) {
 		iziToast.error({
 			title: "Error",
@@ -107,4 +108,12 @@ function showElement(e) {
 }
 function hideElement(e) {
 	e.classList.add('hidden');
+}
+function scrollPage() {
+	const info = gallery.firstElementChild.getBoundingClientRect();
+	const height = info.height * 2;
+	window.scrollBy({
+		behavior: 'smooth',
+		top: height,
+	})
 }
