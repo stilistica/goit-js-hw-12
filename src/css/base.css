@@ -31,16 +31,15 @@ main {
   flex-grow: 1;
 }
 
-
 .hidden {
   display: none;
 }
 button {
-  background-color: #4E75FF;
+  background-color: #4e75ff;
   color: white;
   border-radius: 8px;
   border: none;
 }
 button:hover {
-  background-color: #6C8CFF;
+  background-color: #6c8cff;
 }

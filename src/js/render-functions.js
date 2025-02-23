@@ -1,13 +1,21 @@
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 let lightbox;
 
 export function renderGallery(cards) {
-    return cards
+  return cards
     .map(card => {
-    let {largeImageURL, webformatURL, tags, likes, views, comments, downloads} = card;
-    return `
+      let {
+        largeImageURL,
+        webformatURL,
+        tags,
+        likes,
+        views,
+        comments,
+        downloads,
+      } = card;
+      return `
       <a href="${largeImageURL}" class="photo-card">
         <img src="${webformatURL}" alt="${tags}" loading="lazy" />
         <div class="info">
@@ -18,23 +26,22 @@ export function renderGallery(cards) {
         </div>
       </a>
     `;
-  })
-  .join('');
-
+    })
+    .join('');
 }
 
 export function initializeLightbox() {
   if (lightbox) {
-    lightbox.refresh(); 
-} else {
+    lightbox.refresh();
+  } else {
     lightbox = new SimpleLightbox('.gallery a', {
-			captionsData: 'alt', 
-			captionDelay: 150,   
-			animationSpeed: 200, 
-			closeText: '×',      
-			navText: ['<', '>'],
+      captionsData: 'alt',
+      captionDelay: 150,
+      animationSpeed: 200,
+      closeText: '×',
+      navText: ['<', '>'],
     });
-}
+  }
 }
 
 // варіант 2
