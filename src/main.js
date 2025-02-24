@@ -37,10 +37,7 @@ form.addEventListener('submit', async event => {
     const { result, totalHits } = await fetchImages(params.query, params.page);
 
     if (result.length === 0) {
-      iziToast.info({
-        message: 'Sorry, there are no images matching your search query',
-        position: 'topRight',
-      });
+      hideElement(loadMore);
       return;
     }
 
